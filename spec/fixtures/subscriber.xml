@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<subscriber>
+  <active-until type="datetime">2014-01-01T00:00:00Z</active-until>
+  <billing-first-name>Juan</billing-first-name>
+  <billing-last-name>dela Cruz</billing-last-name>
+  <created-at type="datetime">2014-04-01T08:25:30Z</created-at>
+  <customer-id>3778</customer-id>
+  <eligible-for-free-trial type="boolean">false</eligible-for-free-trial>
+  <email>juan@example.com</email>
+  <expired-at type="datetime" nil="true"/>
+  <grace-until type="datetime">2014-10-01T08:25:30Z</grace-until>
+  <lifetime-subscription type="boolean">false</lifetime-subscription>
+  <on-gift type="boolean">false</on-gift>
+  <on-metered type="boolean">false</on-metered>
+  <on-trial type="boolean">false</on-trial>
+  <ready-to-renew type="boolean">false</ready-to-renew>
+  <ready-to-renew-since type="datetime" nil="true"/>
+  <recurring type="boolean">false</recurring>
+  <screen-name>screen-name-for-3778</screen-name>
+  <store-credit type="decimal">0.0</store-credit>
+  <store-credit-currency-code>USD</store-credit-currency-code>
+  <token>87cf080d44db7e28e0763ddd085ca612cb67915a</token>
+  <updated-at type="datetime">2014-04-01T08:29:04Z</updated-at>
+  <eligible-for-setup-fee type="boolean">true</eligible-for-setup-fee>
+  <card-expires-before-next-auto-renew type="boolean">false</card-expires-before-next-auto-renew>
+  <subscription-plan-name>Example Plan</subscription-plan-name>
+  <subscription-plan-version>
+    <amount type="decimal">24.0</amount>
+    <charge-after-first-period type="boolean">false</charge-after-first-period>
+    <charge-later-duration-quantity type="integer" nil="true"/>
+    <charge-later-duration-units nil="true"/>
+    <created-at type="datetime">2014-04-01T06:45:18Z</created-at>
+    <currency-code>USD</currency-code>
+    <description></description>
+    <duration-quantity type="integer">6</duration-quantity>
+    <duration-units>months</duration-units>
+    <enabled type="boolean">true</enabled>
+    <feature-level>example</feature-level>
+    <force-recurring type="boolean">false</force-recurring>
+    <id type="integer">51741</id>
+    <minimum-needed-for-charge type="decimal">0.0</minimum-needed-for-charge>
+    <name>Example Plan</name>
+    <needs-to-be-renewed type="boolean">true</needs-to-be-renewed>
+    <plan-type>regular</plan-type>
+    <return-url>https://subs.pinpayments.com/sample-return</return-url>
+    <setup-fee-amount type="decimal">0.0</setup-fee-amount>
+    <setup-fee-currency-code>USD</setup-fee-currency-code>
+    <setup-fee-description></setup-fee-description>
+    <subscription-plan-id type="integer">24725</subscription-plan-id>
+    <updated-at type="datetime">2014-04-01T06:45:18Z</updated-at>
+    <version type="integer">2</version>
+    <terms type="string">6 months</terms>
+  </subscription-plan-version>
+  <active type="boolean">true</active>
+  <in-grace-period type="boolean">false</in-grace-period>
+  <feature-level type="string">example</feature-level>
+  <payment-account-on-file type="boolean">false</payment-account-on-file>
+  <payment-account-display type="string"/>
+  <billing-address1 type="string"/>
+  <billing-city type="string"/>
+  <billing-state type="string"/>
+  <billing-zip type="string"/>
+  <billing-country type="string"/>
+  <billing-phone-number type="string"/>
+  <pagination-id type="string">1525516</pagination-id>
+  <invoices type="array">
+    <invoice>
+      <closed type="boolean">true</closed>
+      <created-at type="datetime">2014-04-01T08:25:30Z</created-at>
+      <response-client-message nil="true"/>
+      <response-customer-message nil="true"/>
+      <response-message nil="true"/>
+      <token>cc9d820c561648d087889f30769b2dd8f2ce09b4</token>
+      <updated-at type="datetime">2014-04-01T08:29:04Z</updated-at>
+      <amount type="decimal">24.0</amount>
+      <price>$24.00</price>
+      <currency-code>USD</currency-code>
+      <metadata>example</metadata>
+      <gateway-transaction-reference>TestGateway#purchase</gateway-transaction-reference>
+      <recurring-amount type="integer">0</recurring-amount>
+      <line-items type="array">
+        <line-item>
+          <amount type="decimal">24.0</amount>
+          <currency-code>USD</currency-code>
+          <description>6 months</description>
+          <notes nil="true"/>
+          <price>$24.00</price>
+          <feature-level>example</feature-level>
+          <metadata>example</metadata>
+          <one-time nil="true"/>
+        </line-item>
+      </line-items>
+    </invoice>
+  </invoices>
+</subscriber>
