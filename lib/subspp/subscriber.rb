@@ -3,7 +3,8 @@ module Subspp
     include Base
 
     def self.define_attribute_method(method_name, mapping=nil)
-      mapping ||= method_name
+      mapping ||= method_name.to_s
+      mapping = mapping.gsub(/_/, '-')
       define_method(method_name) do
         node = doc.xpath("//#{mapping}")
         type = node.first.attributes["type"]
@@ -21,7 +22,7 @@ module Subspp
     define_attribute_method :first_name, 'billing-first-name'
     define_attribute_method :last_name, 'billing-last-name'
     define_attribute_method :email
-    define_attribute_method :active_until, 'active-until'
+    define_attribute_method :active_until
 
     def initialize(options)
       set_instance_variable_from_options(options)
