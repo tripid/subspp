@@ -18,6 +18,11 @@ describe Subspp::Subscriber do
     end
   end
 
+  specify :url do
+    expect(subject.url).
+      to eq "https://subs.pinpayments.com/api/v4/merchant-test-site/subscribers/3778.xml"
+  end
+
   specify :first_name do
     expect(subject.first_name).to eq 'Juan'
   end

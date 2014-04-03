@@ -25,10 +25,12 @@ module Subspp
 
     def initialize(options)
       set_instance_variable_from_options(options)
+      @configuration = Subspp.configuration
     end
 
     def url
-      "https://subs.pinpayments.com/api/v4/#{site}/subscribers/#{customer_id}.xml"
+      [ @configuration.host, 'api',  @configuration.api_version, site,
+        'subscribers', "#{customer_id}.xml" ].join('/')
     end
 
     def retrieve

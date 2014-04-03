@@ -9,7 +9,8 @@ module Subspp
     end
 
     def to_url
-      "https://subs.pinpayments.com/#{site}/subscribers/#{customer_id}/subscribe/#{plan_id}/#{screen_name}"
+      [ Subspp.configuration.host, site, 'subscribers', customer_id,
+        'subscribe', plan_id, screen_name  ].join('/')
     end
   end
 end
