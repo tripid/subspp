@@ -38,4 +38,16 @@ describe Subspp::Subscriber do
   specify :email do
     expect(subject.email).to eq 'juan@example.com'
   end
+
+  describe '#subscribe?' do
+    it 'returns true when still subscribed' do
+      Time.stub(:now) { DateTime.new(2013, 1, 1) }
+      expect(subject.subscribed?).to be_true
+    end
+
+    it 'returns false when subscription is passed' do
+      Time.stub(:now) { DateTime.new(2014, 3, 1) }
+      expect(subject.subscribed?).to be_false
+    end
+  end
 end

@@ -34,11 +34,14 @@ module Subspp
         'subscribers', "#{customer_id}.xml" ].join('/')
     end
 
+    def subscribed?
+      active_until > Time.now
+    end
+
     def retrieve
       uri = URI(url)
       Net::HTTP.start(uri.host, uri.port.to_s,
-                                use_ssl: true,
-                                verify_mode: OpenSSL::SSL::VERIFY_NONE) do |http|
+                      use_ssl: true, verify_mode: OpenSSL::SSL::VERIFY_NONE) do |http|
         req = Net::HTTP::Get.new(uri.request_uri)
         req.basic_auth(token, 'X')
         http.request(req)
