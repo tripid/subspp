@@ -37,8 +37,8 @@ module Subspp
     def retrieve
       uri = URI(url)
       Net::HTTP.start(uri.host, uri.port.to_s,
-                                 use_ssl: true,
-                                 verify_mode: OpenSSL::SSL::VERIFY_NONE) do |http|
+                                use_ssl: true,
+                                verify_mode: OpenSSL::SSL::VERIFY_NONE) do |http|
         req = Net::HTTP::Get.new(uri.request_uri)
         req.basic_auth(token, 'X')
         http.request(req)
