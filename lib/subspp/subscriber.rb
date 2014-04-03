@@ -1,5 +1,7 @@
 module Subspp
   class Subscriber
+    include Base
+
     def self.define_attribute_method(method_name, mapping=nil)
       mapping ||= method_name
       define_method(method_name) do
@@ -22,9 +24,7 @@ module Subspp
     define_attribute_method :active_until, 'active-until'
 
     def initialize(options)
-      @token = options.fetch(:token)
-      @site = options.fetch(:site)
-      @customer_id = options.fetch(:customer_id)
+      set_instance_variable_from_options(options)
     end
 
     def url

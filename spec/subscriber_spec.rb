@@ -12,6 +12,18 @@ describe Subspp::Subscriber do
       and_return( File.read('spec/fixtures/subscriber.xml') )
   end
 
+  specify :token do
+    expect(subject.token).to eq params[:token]
+  end
+
+  specify :site do
+    expect(subject.site).to eq params[:site]
+  end
+
+  specify :customer_id do
+    expect(subject.customer_id).to eq params[:customer_id]
+  end
+
   specify :first_name do
     expect(subject.first_name).to eq 'Juan'
   end

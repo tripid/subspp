@@ -1,12 +1,11 @@
 module Subspp
   class SubscribeLink
+    include Base
+
     attr_accessor :customer_id, :plan_id, :screen_name, :site
 
     def initialize(options)
-      @site = options.fetch(:site)
-      @customer_id = options.fetch(:customer_id)
-      @plan_id = options.fetch(:plan_id)
-      @screen_name = options.fetch(:screen_name)
+      set_instance_variable_from_options(options)
     end
 
     def to_url
