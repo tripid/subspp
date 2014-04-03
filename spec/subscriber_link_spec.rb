@@ -1,27 +1,17 @@
 require 'spec_helper'
 
 describe Subspp::SubscribeLink do
-  let(:params) { { site: 'test-site',
-                   plan_id: 55,
-                   customer_id: 1,
-                   screen_name: 'juan-dela-cruz' } }
+  params = { site: 'test-site',
+             plan_id: 55,
+             customer_id: 1,
+             screen_name: 'juan-dela-cruz' }
 
   subject { Subspp::SubscribeLink.new(params) }
 
-  specify :plan_id do
-    expect(subject.plan_id).to eq 55
-  end
-
-  specify :customer_id do
-    expect(subject.customer_id).to eq 1
-  end
-
-  specify :screen_name do
-    expect(subject.screen_name).to eq 'juan-dela-cruz'
-  end
-
-  specify :site do
-    expect(subject.site).to eq 'test-site'
+  params.each do |key, value|
+    specify key do
+      expect(subject.send(key)).to eq params[key]
+    end
   end
 
   specify :to_url do
