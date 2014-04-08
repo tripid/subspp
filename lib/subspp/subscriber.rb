@@ -37,14 +37,14 @@ module Subspp
                       use_ssl: true, verify_mode: OpenSSL::SSL::VERIFY_NONE) do |http|
         req = Net::HTTP::Get.new(uri.request_uri)
         req.basic_auth(token, 'X')
-        http.request(req)
+        response = http.request(req)
       end
     end
 
     def self.load(options)
       subscriber = new(options).tap do |s|
-        xml = s.retrieve
-        s.doc = Nokogiri::XML(xml)
+        response = s.retrieve
+        s.doc = Nokogiri::XML(response.body)
       end
     end
   end

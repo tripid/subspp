@@ -10,8 +10,8 @@ describe Subspp::Subscriber do
       config.site = 'merchant-test-site'
     end
 
-    described_class.any_instance.stub(:retrieve).
-      and_return( File.read('spec/fixtures/subscriber.xml') )
+    response = double(:response, body: File.read('spec/fixtures/subscriber.xml'))
+    described_class.any_instance.stub(:retrieve).and_return( response )
   end
 
   specify :customer_id do
