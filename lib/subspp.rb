@@ -3,13 +3,13 @@ require 'openssl'
 require 'ostruct'
 require 'nokogiri'
 
-require "subspp/base"
-require "subspp/configuration"
-require "subspp/subscribe_link"
-require "subspp/subscriber"
-require "subspp/version"
-
 module Subspp
+  autoload :Base,           'subspp/base'
+  autoload :Resource,       'subspp/resource'
+  autoload :Configuration,  'subspp/configuration'
+  autoload :SubscribeLink,  'subspp/subscribe_link'
+  autoload :Subscriber,     'subspp/subscriber'
+
   class << self
     def configure
       yield(configuration)
