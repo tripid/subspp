@@ -35,6 +35,10 @@ describe Subspp::Subscriber do
     expect(subject.active_until).to eq DateTime.new(2014, 1, 1, 0, 0)
   end
 
+  specify :grace_until do
+    expect(subject.grace_until).to be_instance_of DateTime
+  end
+
   specify :email do
     expect(subject.email).to eq 'juan@example.com'
   end

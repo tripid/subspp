@@ -11,6 +11,7 @@ module Subspp
     define_attribute_method :expired_at
     define_attribute_method :recurring
     define_attribute_method :store_credit
+    define_attribute_method :grace_until
 
     def initialize(options)
       set_instance_variable_from_options(options)
