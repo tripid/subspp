@@ -4,7 +4,7 @@ module Subspp
     extend Forwardable
     include Base
 
-    attr_accessor :token, :site, :customer_id, :doc, :configuration
+    attr_accessor :site, :customer_id, :doc, :configuration
 
     define_attribute_method :first_name, 'billing-first-name'
     define_attribute_method :last_name, 'billing-last-name'
@@ -15,7 +15,7 @@ module Subspp
     define_attribute_method :store_credit
     define_attribute_method :grace_until
 
-    delegate [:host, :api_version, :site] => :configuration
+    delegate [:host, :api_version, :site, :token] => :configuration
 
     def initialize(options)
       set_instance_variable_from_options(options)

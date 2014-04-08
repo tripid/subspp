@@ -1,9 +1,7 @@
 require 'spec_helper'
 
 describe Subspp::Subscriber do
-  params =  { token: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
-              site: 'merchant-test-site',
-              customer_id: 3778 }
+  params =  { customer_id: 3778 }
 
   subject { Subspp::Subscriber.load(params) }
 
@@ -16,10 +14,8 @@ describe Subspp::Subscriber do
       and_return( File.read('spec/fixtures/subscriber.xml') )
   end
 
-  params.each do |key, value|
-    specify :key do
-      expect(subject.send(key)).to eq params[key]
-    end
+  specify :customer_id do
+    expect(subject.customer_id).to eq params[:customer_id]
   end
 
   specify :url do
