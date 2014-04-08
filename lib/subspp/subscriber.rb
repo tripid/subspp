@@ -9,7 +9,7 @@ module Subspp
         node = doc.xpath("//#{mapping}")
         type = node.first.attributes["type"]
 
-        result = doc.xpath("//#{mapping}").text()
+        result = node.text()
         if !type.nil? && type.text() == 'datetime'
           result = DateTime.parse(result)
         end
