@@ -8,6 +8,9 @@ module Subspp
     define_attribute_method :last_name, 'billing-last-name'
     define_attribute_method :email
     define_attribute_method :active_until
+    define_attribute_method :expired_at
+    define_attribute_method :recurring
+    define_attribute_method :store_credit
 
     def initialize(options)
       set_instance_variable_from_options(options)

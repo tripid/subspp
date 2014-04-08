@@ -15,7 +15,7 @@
   <on-trial type="boolean">false</on-trial>
   <ready-to-renew type="boolean">false</ready-to-renew>
   <ready-to-renew-since type="datetime" nil="true"/>
-  <recurring type="boolean">false</recurring>
+  <recurring type="boolean">true</recurring>
   <screen-name>screen-name-for-3778</screen-name>
   <store-credit type="decimal">0.0</store-credit>
   <store-credit-currency-code>USD</store-credit-currency-code>

@@ -5,14 +5,28 @@ module Subspp
       mapping = mapping.gsub(/_/, '-')
       define_method(method_name) do
         node = doc.xpath("//#{mapping}")
-        type = node.first.attributes["type"]
-
-        result = node.text()
-        if !type.nil? && type.text() == 'datetime'
-          result = DateTime.parse(result)
-        end
-        result
+        type = node.first.attributes["type"] || 'text'
+        send("to_#{type}", node.text)
       end
+    end
+
+    private
+
+    def to_text(value)
+      value.to_s
+    end
+
+    def to_datetime(value)
+      return if value === '' || value .nil?
+      DateTime.parse(value)
+    end
+
+    def to_boolean(value)
+      value === 'true'
+    end
+
+    def to_decimal(value)
+      value.to_f
     end
   end
 end

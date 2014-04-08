@@ -39,6 +39,20 @@ describe Subspp::Subscriber do
     expect(subject.email).to eq 'juan@example.com'
   end
 
+  specify :recurring do
+    expect(subject.recurring).to be_true
+  end
+
+  specify :store_credit do
+    expect(subject.store_credit).to eq 0.0
+  end
+
+  describe '#expired_at' do
+    it 'returns nil when there is no value' do
+      expect(subject.expired_at).to be_nil
+    end
+  end
+
   describe '#subscribe?' do
     it 'returns true when still subscribed' do
       Time.stub(:now) { DateTime.new(2013, 1, 1) }
