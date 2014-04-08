@@ -8,7 +8,7 @@
   <eligible-for-free-trial type="boolean">false</eligible-for-free-trial>
   <email>juan@example.com</email>
   <expired-at type="datetime" nil="true"/>
-  <grace-until type="datetime">2014-10-01T08:25:30Z</grace-until>
+  <grace-until type="datetime">2014-02-01T00:00:00Z</grace-until>
   <lifetime-subscription type="boolean">false</lifetime-subscription>
   <on-gift type="boolean">false</on-gift>
   <on-metered type="boolean">false</on-metered>

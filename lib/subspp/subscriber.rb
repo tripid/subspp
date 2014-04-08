@@ -24,7 +24,7 @@ module Subspp
     end
 
     def subscribed?
-      active_until > Time.now
+      grace_until > Time.now
     end
 
     def retrieve
