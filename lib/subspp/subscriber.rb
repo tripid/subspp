@@ -1,8 +1,10 @@
+require 'forwardable'
 module Subspp
   class Subscriber < Resource
+    extend Forwardable
     include Base
 
-    attr_accessor :token, :site, :customer_id, :doc
+    attr_accessor :token, :site, :customer_id, :doc, :configuration
 
     define_attribute_method :first_name, 'billing-first-name'
     define_attribute_method :last_name, 'billing-last-name'
@@ -13,14 +15,16 @@ module Subspp
     define_attribute_method :store_credit
     define_attribute_method :grace_until
 
+    delegate [:host, :api_version, :site] => :configuration
+
     def initialize(options)
       set_instance_variable_from_options(options)
       @configuration = Subspp.configuration
     end
 
     def url
-      [ @configuration.host, 'api',  @configuration.api_version, site,
-        'subscribers', "#{customer_id}.xml" ].join('/')
+      [ host, 'api',  api_version, site, 'subscribers',
+        "#{customer_id}.xml" ].join('/')
     end
 
     def subscribed?

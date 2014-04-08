@@ -8,6 +8,10 @@ describe Subspp::Subscriber do
   subject { Subspp::Subscriber.load(params) }
 
   before do
+    Subspp.configure do |config|
+      config.site = 'merchant-test-site'
+    end
+
     described_class.any_instance.stub(:retrieve).
       and_return( File.read('spec/fixtures/subscriber.xml') )
   end

@@ -1,7 +1,7 @@
 module Subspp
   class Configuration
     attr_writer :host, :api_version
-    attr_accessor :token
+    attr_accessor :token, :site
 
     def host
       @host || 'https://subs.pinpayments.com'

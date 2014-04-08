@@ -15,6 +15,7 @@ describe Subspp do
     before do
       Subspp.configure do |config|
         config.host        = 'https://test.pinpayments.com'
+        config.site        = 'test-site'
         config.api_version = 'test version'
         config.token       = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
       end
@@ -22,6 +23,10 @@ describe Subspp do
 
     specify :host do
       expect(Subspp.configuration.host).to eq 'https://test.pinpayments.com'
+    end
+
+    specify :site do
+      expect(Subspp.configuration.site).to eq 'test-site'
     end
 
     specify :api_version do
