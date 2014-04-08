@@ -1,6 +1,5 @@
 require 'net/http'
 require 'openssl'
-require 'ostruct'
 require 'nokogiri'
 
 module Subspp
