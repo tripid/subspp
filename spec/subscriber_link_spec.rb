@@ -37,6 +37,13 @@ describe Subspp::SubscribeLink do
     end
   end
 
+  specify '#screen_name' do
+    expect(Subspp::SubscribeLink.new(screen_name: 'juan-dela-cruz').screen_name).to eq 'juan-dela-cruz'
+    expect(Subspp::SubscribeLink.new(screen_name: 'Juan-dela-Cruz').screen_name).to eq 'juan-dela-cruz'
+    expect(Subspp::SubscribeLink.new(screen_name: 'juan dela cruz').screen_name).to eq 'juan-dela-cruz'
+    expect(Subspp::SubscribeLink.new(screen_name: 'juan dela cruz<').screen_name).to eq 'juan-dela-cruz%3C'
+  end
+
   specify '#to_url' do
     subscribe_link = Subspp::SubscribeLink.new( site: 'test-site',
                                                 plan_id: 55,
