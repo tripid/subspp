@@ -1,5 +1,6 @@
+require 'ostruct'
 module Subspp
-  class Configuration
+  class Configuration < OpenStruct
     attr_writer :host, :api_version, :plan_ids
     attr_accessor :token, :site
 
