@@ -8,8 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = Subspp::VERSION
   spec.authors       = ["Tristan Peralta"]
   spec.email         = ["tristanperalta@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{ Ruby client for subs.pinpayments.com API }
   spec.homepage      = ""
   spec.license       = "MIT"
 
