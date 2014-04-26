@@ -1,7 +1,7 @@
 module Subspp
   class Configuration
-    attr_writer :host, :api_version
-    attr_accessor :token, :site, :plan_ids
+    attr_writer :host, :api_version, :plan_ids
+    attr_accessor :token, :site
 
     def host
       @host || 'https://subs.pinpayments.com'
@@ -9,6 +9,10 @@ module Subspp
 
     def api_version
       @api_version || 'v4'
+    end
+
+    def plan_ids
+      @plan_ids || {}
     end
   end
 end
