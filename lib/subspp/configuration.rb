@@ -1,19 +1,12 @@
 require 'ostruct'
 module Subspp
-  class Configuration < OpenStruct
-    attr_writer :host, :api_version, :plan_ids
-    attr_accessor :token, :site
+  class Configuration
+    attr_accessor :host, :api_version, :plan_ids, :token, :site
 
-    def host
-      @host || 'https://subs.pinpayments.com'
-    end
-
-    def api_version
-      @api_version || 'v4'
-    end
-
-    def plan_ids
-      @plan_ids || {}
+    def initialize(options={})
+      @host         = options.fetch(:host, 'https://subs.pinpayments.com')
+      @api_version  = options.fetch(:api_version, 'v4')
+      @plan_ids     = options.fetch(:plan_ids, {})
     end
   end
 end
