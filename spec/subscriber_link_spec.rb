@@ -44,11 +44,11 @@ describe Subspp::SubscribeLink do
     expect(Subspp::SubscribeLink.new(screen_name: 'juan dela cruz<').screen_name).to eq 'juan-dela-cruz%3C'
   end
 
-  specify '#to_url' do
+  specify '#to_s' do
     subscribe_link = Subspp::SubscribeLink.new( site: 'test-site',
                                                 plan_id: 55,
                                                 customer_id: 1,
                                                 screen_name: 'juan-dela-cruz' )
-    expect(subscribe_link.to_url).to eq "https://subs.pinpayments.com/test-site/subscribers/1/subscribe/55/juan-dela-cruz"
+    expect(subscribe_link.to_s).to eq "https://subs.pinpayments.com/test-site/subscribers/1/subscribe/55/juan-dela-cruz"
   end
 end
