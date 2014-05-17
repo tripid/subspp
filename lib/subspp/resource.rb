@@ -17,7 +17,7 @@ module Subspp
     end
 
     def to_datetime(value)
-      return if value === '' || value .nil?
+      return DateTime.new(0) if value === '' || value .nil?
       DateTime.parse(value)
     end
 

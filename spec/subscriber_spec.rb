@@ -53,7 +53,7 @@ describe Subspp::Subscriber do
 
   describe '#expired_at' do
     it 'returns nil when there is no value' do
-      expect(subject.expired_at).to be_nil
+      expect(subject.expired_at).to eq DateTime.new(0)
     end
   end
 
