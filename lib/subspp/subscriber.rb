@@ -14,6 +14,10 @@ module Subspp
     define_attribute_method :recurring
     define_attribute_method :store_credit
     define_attribute_method :grace_until
+    define_attribute_method :customer_id
+    define_attribute_method :subscription_plan_name
+    define_attribute_method :created_at
+    define_attribute_method :updated_at
 
     delegate [:host, :api_version, :site, :token] => :configuration
 
