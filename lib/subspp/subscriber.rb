@@ -48,7 +48,9 @@ module Subspp
     def self.load(options)
       subscriber = new(options).tap do |s|
         response = s.retrieve
-        s.doc = Nokogiri::XML(response.body)
+        if response.code == '200'
+          s.doc = Nokogiri::XML(response.body)
+        end
       end
     end
   end
