@@ -27,7 +27,7 @@ module Subspp
     end
 
     def url
-      [ host, 'api',  api_version, site, 'subscribers', "#{customer_id}.xml" ].
+      [ host, 'api',  api_version, site, 'subscribers', "#{@customer_id}.xml" ].
         join('/')
     end
 
