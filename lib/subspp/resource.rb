@@ -4,9 +4,11 @@ module Subspp
       mapping ||= method_name.to_s
       mapping = mapping.gsub(/_/, '-')
       define_method(method_name) do
-        node = doc.xpath("//#{mapping}")
-        type = node.first.attributes["type"] || 'text'
-        send("to_#{type}", node.text)
+        unless doc.nil?
+          node = doc.xpath("//#{mapping}")
+          type = node.first.attributes["type"] || 'text'
+          send("to_#{type}", node.text)
+        end
       end
     end
 
