@@ -32,7 +32,7 @@ module Subspp
     end
 
     def subscribed?
-      grace_until > Time.now
+      grace_until > Time.now if not grace_until.nil?
     end
 
     def retrieve
